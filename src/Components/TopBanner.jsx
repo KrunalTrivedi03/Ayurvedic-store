@@ -1,8 +1,28 @@
 import { Clock, Tag, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function TopBanner() {
   const [visible, setVisible] = useState(true);
+  const [slide, setSlide] = useState(0);
+
+  const messages = [
+    {
+      icon: <Tag size={16} className="text-white" />,
+      text: "Get 15% off on Ayurvedic medicines",
+    },
+    {
+      icon: <Clock size={16} className="text-white" />,
+      text: "Open 11:00 AM - 5:00 PM",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlide((prev) => (prev + 1) % messages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div
@@ -13,14 +33,34 @@ export default function TopBanner() {
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between text-sm relative">
 
-        <div className="flex items-center gap-2">
-          <Tag size={16} className="text-white" />
-          <span>Get 15% off on Ayurvedic medicines</span>
+        <div className="sm:hidden w-full overflow-hidden">
+          <div
+            className="whitespace-nowrap transition-transform duration-500"
+            style={{ transform: `translateX(-${slide * 100}%)` }}
+          >
+            {messages.map((m, i) => (
+              <div
+                key={i}
+                className="inline-flex items-center gap-2 w-full"
+                style={{ width: "100%" }}
+              >
+                {m.icon}
+                <span>{m.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="hidden sm:flex items-center gap-2 mr-8">
-          <Clock size={16} className="text-white" />
-          <span>Open 11:00 AM - 5:00 PM</span>
+        <div className="hidden sm:flex items-center gap-8">
+          <div className="flex items-center gap-2">
+            <Tag size={16} className="text-white" />
+            <span>Get 15% off on Ayurvedic medicines</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Clock size={16} className="text-white" />
+            <span>Open 11:00 AM - 5:00 PM</span>
+          </div>
         </div>
 
         <button
@@ -29,7 +69,6 @@ export default function TopBanner() {
         >
           <X size={18} className="text-white" />
         </button>
-
       </div>
     </div>
   );
