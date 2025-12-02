@@ -8,7 +8,7 @@ export default function TopBanner() {
   const messages = [
     {
       icon: <Tag size={16} className="text-white" />,
-      text: "Get 15% off on Ayurvedic medicines",
+      text: "Get 15% off on Selected Ayurvedic medicines",
     },
     {
       icon: <Clock size={16} className="text-white" />,
@@ -54,7 +54,7 @@ export default function TopBanner() {
         <div className="hidden sm:flex items-center gap-8">
           <div className="flex items-center gap-2">
             <Tag size={16} className="text-white" />
-            <span>Get 15% off on Ayurvedic medicines</span>
+            <span>Get 15% off on Selected Ayurvedic medicines</span>
           </div>
 
           <div className="flex items-center gap-2">
