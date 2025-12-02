@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex items-center gap-2">
           <HeartPulse size={26} className="text-white" />
           <span className="text-lg font-semibold">
-            Sarv Kila Natural Ayurvedic Store
+            Sarv Hita Natural Ayurvedic
           </span>
         </div>
 
@@ -21,7 +21,7 @@ export default function Footer() {
           </nav>
 
           <p className="text-xs opacity-80">
-            Copyright © {new Date().getFullYear()} Sarv Kila Natural Ayurvedic Store. 
+            Copyright © {new Date().getFullYear()} Sarv Hita Natural Ayurvedic. 
             All rights reserved.
           </p>
         </div>

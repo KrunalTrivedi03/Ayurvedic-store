@@ -124,7 +124,7 @@ export default function About() {
           </h2>
 
           <p className="text-slate-700 text-lg leading-relaxed">
-            Sarv Kila Natural Ayurvedic Store provides authentic Ayurvedic care under the
+            Sarv Hita Natural Ayurvedic provides authentic Ayurvedic care under the
             expertise of <strong>Vaidya Archana Kedwani (Ayurvedacharya)</strong>. We deliver natural healing solutions,
             herbal medicines, and trusted Panchakarma therapies rooted in classical Ayurvedic principles.
           </p>

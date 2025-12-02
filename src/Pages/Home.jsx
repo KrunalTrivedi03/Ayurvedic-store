@@ -13,7 +13,7 @@ import "swiper/css";
 
 export default function Home() {
   return (
-    <main className="pt-16 bg-white">
+    <main className="pt-16 bg-white w-full overflow-x-hidden">
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-12 py-16 lg:py-28">
           <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
